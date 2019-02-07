@@ -22,6 +22,7 @@
             margin-bottom: 20px;
             display: flex;
             padding: 10px;
+            padding-left: 20px;
             border: 2px solid white;
             border-radius: 50px 20px;
         }
@@ -31,6 +32,7 @@
             align-items: center;
             color: rgb(255, 255, 255);
             flex: 1;
+            font: monospace
         }
 
         nav ul {
@@ -52,7 +54,7 @@
         main {
             background: rgb(211, 211, 211);
             display: flex;
-            border: 2px solid grey;
+            border: 1px solid grey;
             border-radius: 20px 50px;
         }
 
@@ -132,19 +134,19 @@
         }
 
         #portfolio li {
-            background: #fff;
+            background: rgb(0, 0, 129);
             padding: 10px;
             border-radius: 10px;
             margin-bottom: 10px;
         }
 
         #portfolio li:hover {
-            background: #eee;
+            background: rgb(211, 211, 211);
         }
 
         #portfolio a {
             text-decoration: none;
-            color: #454545;
+            color: white;
         }
 
         .interests header {
