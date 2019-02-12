@@ -13,10 +13,10 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-return value => value > base;  
-    
-    
-    
+    return value => value > base;
+
+
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -27,10 +27,10 @@ return value => value > base;
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-return value => value < base;    
-    
-    
-    
+    return value => value < base;
+
+
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -41,13 +41,14 @@ return value => value < base;
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-return string => {
-if (string.toLowerCase().charAt(0) === startsWith.toLowerCase()) {
-    return true; 
-} else { 
-return false;
-}    
-};   
+    return string => {
+        if (string.toLowerCase().charAt(0) === startsWith.toLowerCase()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
     // YOUR CODE ABOVE HERE //
 }
 
@@ -58,16 +59,17 @@ return false;
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-return string => {
-if (string.toLowerCase().charAt(string.length - 1) === endsWith.toLowerCase()) {
-    return true; 
-} else { 
-return false;
-}    
-};       
-    
-    
-    
+    return string => {
+        if (string.toLowerCase().charAt(string.length - 1) === endsWith.toLowerCase()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+
+
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -81,12 +83,12 @@ return false;
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     var arr = [];
-strings
-.forEach(x => arr.push(modify(x))); 
+    strings
+        .forEach(x => arr.push(modify(x)));
 
-return arr;    
-    
-    
+    return arr;
+
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -101,18 +103,29 @@ return arr;
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-strings
-.forEach(x => 
-if (test(x) === false
-} else {
-return true;    
-}
-    
+
+    for (let i = 0; i < strings.length; i++) {
+        if (test(strings[i]) === false) {
+            return false;
+        }
+    }
+    return true;
+
+
+
+
+    // strings
+    // .forEach(x => 
+    // if (test(x) === false
+    // } else {
+    // return true;    
+    // }
+
     // YOUR CODE ABOVE HERE //
 }
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
+if ((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports.createGreaterThanFilter = createGreaterThanFilter;
@@ -120,5 +133,5 @@ if((typeof process !== 'undefined') &&
     module.exports.createStartsWithFilter = createStartsWithFilter;
     module.exports.createEndsWithFilter = createEndsWithFilter;
     module.exports.modifyStrings = modifyStrings;
-    module.exports.allStringsPass = allStringsPass;   
+    module.exports.allStringsPass = allStringsPass;
 }

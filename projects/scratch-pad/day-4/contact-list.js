@@ -37,23 +37,69 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-
-} 
-
+    //create empty object to put info in
+    const contact = {};
+    //add key and assign them to dynamic values   
+    contact["id"] = id;
+    contact["nameFirst"] = nameFirst;
+    contact["nameLast"] = nameLast;
+    console.log(contact);
+    //return object to be worked with 
+    return contact;
+}
 
 function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
-    
+    var contactList = [];
+
     return {
         // we implemented the length api for you //
         length: function() {
-            return contacts.length;
+            return contactList.length;
+        },
+        // take the contact object given and insers it into the contactlist object
+        addContact: function(contact) {
+            return contactList.push(contact);
+        },
+        // remove contact
+        removeContact: function(contact) {
+            return contactList.pop(contact);
+        },
+        //take a string of someones full name, returns that contacobject if name matches. 
+        findContact: function(fullName) {
+            for (let i = 0; i < contactList.length; i++) {
+                var full = contactList[i].nameFirst + " " + contactList[i].nameLast;
+                if (full === fullName) {
+                    return contactList[i];
+                }
+                else {
+                    return undefined;
+                }
+            }
+        },
+
+        //check for match... forEach? filter?
+        //   contactList.forEach(x => 
+        //   if (x.nameFirst + " " + x.nameLast === fullName) {
+        //       return x; 
+        //   } else { 
+        //       return undefined; 
+        //   })
+
+        //    return contactList.filter(function(x) {
+        //       return x.nameFirst + " " + x.nameLast === fullName;
+        //    });
+
+        printAllContactNames: function() {
+            let fullNames = [];
+            contactList.forEach(x => fullNames.push(x.nameFirst + " " + x.nameLast));
+            return fullNames.join("\n");
         }
-    }
+    };
 }
+
 
 
 
@@ -64,8 +110,8 @@ function makeContactList() {
 
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
-(typeof process.versions.node !== 'undefined')) {
+if ((typeof process !== 'undefined') &&
+    (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports.makeContact = makeContact;
     module.exports.makeContactList = makeContactList;

@@ -44,7 +44,23 @@
 
 2.7.19
 
+// Scope/Vairable Access: 3 Scopes - Global | Function | Nested Function | Global only has access to 
+// the variable declared in its own scope. Function has access to its and global, Nested 
+// has access to all variables. 
+
+// Closures: a functions with access to the parents scope even after the parent functions
+// has closed. If doesnt access outside of function it's not a closure. 
+
+// Closures: useful when returning functions from functions. Keep variables alived in returned
+// functions. Clasure also works with accessing outside parameters. Keep dynamic variables alive.
+
 // 
+
+
+
+
+
+
 
 
 

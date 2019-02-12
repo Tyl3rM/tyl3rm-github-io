@@ -23,10 +23,19 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
-    
-    
-    
+    let arr = [];
+    if (start < end) {
+        for (var i = start; i <= end; i++) {
+            arr.push(i);
+        }
+    }
+    else {
+        for (var i = start; i >= end; i--) {
+            arr.push(i);
+        }
+    }
+    return arr;
+
     // YOUR CODE GOES ABOVE HERE //
 }
 
@@ -35,8 +44,8 @@ function range(start, end) {
 
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
-   (typeof process.versions.node !== 'undefined')) {
+if ((typeof process !== 'undefined') &&
+    (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports.range = range;
 }
