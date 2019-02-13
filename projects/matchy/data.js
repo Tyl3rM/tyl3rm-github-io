@@ -77,10 +77,10 @@ function getRandom() {
     return Math.floor(Math.random() * animals.length);
 }
 
-friends.push(animals.dog[getRandom()]);
-console.log(animals.dog[getRandom()] + "test");
+friends.push(animals[getRandom()].name);
+console.log(getRandom());
 console.log(friends);
-animals[0].friends = friends;
+animals[getRandom()].friends = friends;
 console.log(animals);
 
 /**

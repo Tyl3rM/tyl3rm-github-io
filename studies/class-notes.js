@@ -1,4 +1,4 @@
-2.5.19 
+2.5 .19
 
 // Loops: For loops often used to itterate over arrrays. Just repeating a block of code, 
 // no specific link to an array. 
@@ -22,7 +22,7 @@
 // Properties and Methods of Collections: Arrays - .concat .includes .pop .slice .push
 // Objects - .hasOwnProperty .valueOf .toString (See more on MDN) Double check all info on MDN
 
-2.6.19 
+2.6 .19
 
 // Scope: Imagine nested boxes. Global, Function, if:else, and loops. Each block is a different
 // scope. Blocks are ended with ; Scope determines what we have access to. 
@@ -42,7 +42,7 @@
 // Variable Dec Scopes: Var can be re-assigned, in global and local scope. Let can be re-assigned, 
 // but it stays within its block scope. const cant be re-assigned, and is block scoped. try to use const. 
 
-2.7.19
+2.7 .19
 
 // Scope/Vairable Access: 3 Scopes - Global | Function | Nested Function | Global only has access to 
 // the variable declared in its own scope. Function has access to its and global, Nested 
@@ -57,7 +57,7 @@
 
 // WEEK TWO //
 
-2.11.19
+2.11 .19
 
 // Object Access: Objects/Arrays hold value differently. Accessing these values is different as well
 // Arrays only bracket notation. Objects bracket and dot notation. Use bracket notation to be dynamic. 
@@ -68,27 +68,10 @@
 // Adding Value: Array methods - .push .unshift .push .splice || 
 //               Object methods - .dot notation [bracket notation]
 
-//  
+2.12 .19
 
+// String Manipulation - all string methods are pure function. Theyre pure because you cannot
+// mutate simple datatypes. The string methods do not manipulate the original string, they create
+// a new copy which the new changes. Primitive datatype copy by value.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+2.13 .19
