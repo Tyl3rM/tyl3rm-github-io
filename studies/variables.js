@@ -33,7 +33,6 @@ var myVariable = true;
 myVariable = "someString";
 
 // 2. Scope //
-
 /*
 At it's core scope can be visualized as boxes inside other boxes, which only have
 acess to their outer boxers. An outer box can not access information in an inner.
@@ -43,11 +42,9 @@ Local Scope:    | |Function|  |
 Block Scope:    | | |If  | |  |  
 Block Scope:    | | |Else| |  |
 Block Scope:    | |Loop    |  |
-
 */
 
 // 3. Hoisting //
-
 /*
 All variables are processed before the code is ever called. During this process 
 variables and functions are hoisted, visually brought to the top of their scope

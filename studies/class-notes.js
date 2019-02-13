@@ -54,7 +54,33 @@
 // Closures: useful when returning functions from functions. Keep variables alived in returned
 // functions. Clasure also works with accessing outside parameters. Keep dynamic variables alive.
 
-// 
+
+// WEEK TWO //
+
+2.11.19
+
+// Object Access: Objects/Arrays hold value differently. Accessing these values is different as well
+// Arrays only bracket notation. Objects bracket and dot notation. Use bracket notation to be dynamic. 
+
+// Storing Values: Ararys value are stored in ordered, numbered indices. The index starts at zero and 
+// goes up by one. Objects store value in Key: Value pairs. 
+
+// Adding Value: Array methods - .push .unshift .push .splice || 
+//               Object methods - .dot notation [bracket notation]
+
+//  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
