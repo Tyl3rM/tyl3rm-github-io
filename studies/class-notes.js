@@ -75,3 +75,12 @@
 // a new copy which the new changes. Primitive datatype copy by value.
 
 2.13 .19
+
+// Functions: a block of code we can reuse, to avoid writing code multiple times. Functions are made
+// of a name, parameters, arguments, functions body, and a return statement. Call with function name,
+// parenthesis, and arugments. Return isn't required. Arguments/Parameters arent required. 
+
+// Defining Functions: function name (parameters) { body } Call: name(arguments). Two Ways to create a
+// function are 1. Function Delceration 2. Functions Expressions declaring variable, assignging to function.
+
+//
