@@ -41,9 +41,7 @@ else if (input === "Andy" || input === "Connor") {
 else {
     console.log("Keep trying!");
 }
-
-
-console.log(input); // prints => Keepy trying!
+// prints => Keepy trying!
 
 // 2. Switch Statements //
 
@@ -75,7 +73,7 @@ switch (dayOfWeek) {
         console.log("It's the Weekend, SKRRRT!");
         break;
     default:
-        console.log("What FUCKING day is it?!");
+        console.log("What day is it?!");
 }
 
-console.log(num); // prints => It's the Weekend, SKRRRT!
+// prints => It's the Weekend, SKRRRT!

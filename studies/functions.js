@@ -14,12 +14,12 @@ at call time.
 // Requires the keyword "function" && a relevant name.
 
 function answerToLife(a, b) {
-    return a + b;
+    return a + "-" + b;
 }
 // .2 Function Calling //
 // Requires the function name && desired arguments to be evaluated. 
 
-console.log(answerToLife("Fourty", "Two")); // prints => "Fourty Two")
+console.log(answerToLife("Fourty", "Two")); // prints => "Fourty-Two")
 
 // 2. Function Hoisting //
 // Function are hoisted above var declerations, with their whole body.
@@ -34,7 +34,7 @@ let elite = function(a, b) {
     return a * b;
 };
 
-elite(668.5, 2); // prints => 1337
+console.log(elite(668.5, 2)); // prints => 1337
 
 // 5. Specifying Inputs && Outputs //
 // Optionally, a function can take no inputs && optional to return single values.
@@ -51,11 +51,11 @@ function scope() {
     console.log(z); // prints => 2
     return y + z;
 }
-scope(); // prints => 6
+console.log(scope()); // prints => 6
 
 console.log(y); // prints => 42
 // The first y is a different variable in global scope, than the function scope y.
-console.log(z); // prints => Reference Error: Z is not defined
+// console.log(z); // prints => Reference Error: Z is not defined
 // The variable z can't be accessed in the global scope, only within function.   
 
 
@@ -69,8 +69,24 @@ function close() {
     };
 }
 
-close(); // prints => 6
+console.log(close()); // prints => 6
 // The anonymous function is closure accessing the x declared in parent function.
 
 // 8. Pure Functions //
 // A function is pure if it doesn't alter or access anything outside its scope.
+
+function pure(x, y) {
+    var z = x + y;
+    return function impure() {
+        z + 2;
+    };
+}
+console.log(pure(4, 2)()); // prints => 8
+
+// 8. First Class Functions //
+
+/* Above, a function which returns another function, is an example of first class
+functions. First class functions can also be defined by functions which are 
+assigned to variables, function expressions, and functions being passed as 
+arguments. 
+*/

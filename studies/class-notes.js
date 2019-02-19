@@ -83,4 +83,6 @@
 // Defining Functions: function name (parameters) { body } Call: name(arguments). Two Ways to create a
 // function are 1. Function Delceration 2. Functions Expressions declaring variable, assignging to function.
 
-//
+2.14 .19
+
+// Functions assign paramters like variables.

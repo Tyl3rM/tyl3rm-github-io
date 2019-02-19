@@ -52,7 +52,7 @@ console.log(4 !== 2); // prints => True
 console.log(4 !== '2'); // prints => True
 
 // .2 Non-Strict Comparison //
-// ¡¡DONT FUCKING USE THIS SHIT EVER!! //
+// ¡¡DONT USE THIS, EVER!! //
 // ¡¡ANDY WILL RIMRAF YOUR LIFE AWAY!! //
 
 console.log(42 == "42"); // prints => True
@@ -85,9 +85,20 @@ console.log(!!42); // prints => True
 // Unary operators work on a single operand.
 
 let elite = 1337;
-console.log(+elite); // prints =>
-console.log(++elite); // prints =>
-console.log(--elite); // prints =>
+console.log(+elite); // prints => 1337
+console.log(++elite); // prints => 1338
+console.log(--elite); // prints => 1337
+
+// .1 Delete Operator //
+// using keyword Delete, remove a propety from an object.
+
+let obj = {
+    first: "Tyler",
+    last: "Mott"
+};
+console.log(obj); // prints => { first: "Tyler", last: "Mott" }
+delete obj.first;
+console.log(obj); // prints => { last: "Mott" }
 
 // 6. Ternary Operators //
 // Ternary operators evaluate two operands, similar to Else/If (see Control-Flow) 

@@ -17,9 +17,9 @@ individual characters of strings we'd use [bracket notation].
 console.log(single[0]); // prints => "S"
 
 /*
-There are many different ways to manipulate strings with methods native to 
+There are MANY different ways to manipulate strings with methods native to 
 javascipt. All string methods are pure in nature, which means they do not
-manipulate the original data. They only modify it for output. That's why we're 
+manipulate the original data. They only modify the copied value. That's why we're 
 able to manipulate the same variables multiple time for manipulation. 
 */
 
@@ -38,14 +38,23 @@ console.log(single.length); // prints => 6
 
 // Replace Parts //
 
-single.replace("New String");
+let newString = single.replace("New String");
 
-console.log(single); // prints => "New String"
+console.log(single); // prints => "String"
+console.log(newString); // prints => "New String" 
 
 // String to Characters //
 
 console.log(single.split("")); // prints => ["S","t","r","i","n","g"]
 
-//String Split //
+// String Split //
 
-console.log(single.splice(" ")); // prints => "String"
+console.log(double.splice(" ")); // prints => "String"
+
+// String Search //
+
+console.log(newString.search("String")); // prints => 1
+
+// Character At (index) //
+
+console.log(single.charAt(0)); // prints => "S"

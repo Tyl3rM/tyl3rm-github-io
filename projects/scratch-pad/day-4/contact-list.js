@@ -38,13 +38,11 @@
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
     //create empty object to put info in
-    const contact = {};
-    //add key and assign them to dynamic values   
-    contact["id"] = id;
-    contact["nameFirst"] = nameFirst;
-    contact["nameLast"] = nameLast;
-    console.log(contact);
-    //return object to be worked with 
+    const contact = {
+        id: id,
+        nameFirst: nameFirst,
+        nameLast: nameLast,
+    };
     return contact;
 }
 

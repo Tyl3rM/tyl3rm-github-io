@@ -3,7 +3,7 @@
 /*
 To hold things in memory during the life-cycle of a program, we can use variables.  Variables
 are named identifiers that can point to values of a particular type, like a Number, String,
-Boolean, Array, Object or another data-type.  Variables are called so because once created, we
+Boolean, Array, Object or another data-type. Variables are called so because once created, we
 can CHANGE the value (and type of value) to which they point.
 */
 
@@ -51,6 +51,13 @@ variables and functions are hoisted, visually brought to the top of their scope
 and declared a spot in memory, no assignment is given at this point. These 
 declreations only exist within their scope, but can be accessed by their child
 scope. 
+
+Hoisting an scope go hand in hand in a sense. You have to understand the constraints
+of scope to understand when an where things will be hoisted. For Example, a function,
+if hoisted to the top of it, scope, so if it's within another function its only
+hoisted to the top of that function. If you don't fully understand Hoisting/Scope
+then it can cause problems when accessing information you thought was available,
+and vice versa, such as knowing you can call a function above its declceration. 
 */
 
 // 4. Variable Keywords //
@@ -66,7 +73,7 @@ console.log(global); // prints => 42
 // .2 Let //
 // Declares the variables scope to the block in which it is declared. Not hoisted.
 
-console.log(blocked); // prints => Reference Error: Block is not defined
+// console.log(blocked); // prints => Reference Error: Block is not defined
 let blocked = 42;
 console.log(blocked); // prints => 42
 blocked = 1337;
@@ -77,11 +84,11 @@ console.log(blocked); // prints => 1337
 
 const final = 42;
 console.log(final); // prints => 42
-final = 1337
-console.log(final); // prints => TypeError: Assignment to constant variable.
+// final = 1337;
+// console.log(final); // prints => TypeError: Assignment to constant variable.
 
 // .4 No Keyword //
 // When no variable keyword, is confined by nothing, globally scoped, not recomended.
 
-noscope = 42;
-console.log(noscope) // prints => 42
+let noscope = 42;
+console.log(noscope); // prints => 42

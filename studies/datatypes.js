@@ -12,9 +12,20 @@ Strings, and Booleans. Complex data types are Arrays, Objects and Functions.
 Primitive dataypes are set to a specific size of 8 bites in memory. They are
 set to this size, making them inmutable. This means once they have a value that
 they will always be that value in memory. This data is copied in javascript by
-value. Simply put this means a value is recreated in memory as a second copy 
-assigned to a given value. 
+value.
 */
+
+// 1. Copy By Value //
+// A variables value is recreated in memory and its copy can never be changed.
+
+let value = "Fourty-Two";
+let val = value;
+console.log(value); // prints => "Fourty-Two"
+console.log(val); // prints => "Fourty-Two" 
+val = value.toUpperCase();
+console.log(value); // prints => "Fourty-Two"
+console.log(val); // prints => "FOURTY-TWO" 
+
 
 // 2. Number //
 // Stored in 64bits by javasript, with only one distinction.  
@@ -64,18 +75,27 @@ console.log(und); // prints => Undefined
 // Represents the intentional absence of a value.
 
 let not = null;
-console.log(und); // prints => Null
+console.log(not); // prints => Null
 
 // Complex Datatypes //
 
 /*
 Complex dataypes can be an infinite size in javascript. This is possible because
 they are mutable forms of data, meaning even after you create them, they can be
-expanded upon. This date is copied by reference in javascript. Simply put a
-variable doesnt gets it's own copy of the datatype, it points to the existing 
-object in memory.
+expanded upon. This date is copied by reference in javascript. 
 */
 
+// Copy By Reference //
+// Variable doesnt gets it's own copy, it points to the existing complex value.
+
+let complex = [4, 2, 42];
+let comp = complex;
+console.log(value); // prints => [4, 2, 42]
+console.log(val); // prints => [4, 2, 42] 
+let complexity = comp.push("Fourty-Two");
+console.log(complex); // prints => [4, 2, 42, "Fourty-Two"]
+console.log(comp); // prints => [4, 2, 42, "Fourty-Two"] 
+console.log(complexity); // prints => [4, 2, 42, "Fourty-Two"]
 
 // 7. Array //
 // A collection of data in a zero indexed list, denoted by [square brackets]. 
