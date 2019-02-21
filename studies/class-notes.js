@@ -86,3 +86,22 @@
 2.14 .19
 
 // Functions assign paramters like variables.
+
+2.18 .19
+
+// Higher Order Functions: A function that either returns a new function or takes a function as an argument. 
+
+// Exomple: filterStrings - What we are given: an array of strings. A one letter string. A test function that returns a boolean. 
+
+// Set Up: Normally we are provided the function we implement. Function:     filterStrings (strings, char, test) { ... }
+// Create a variable that can be returned by the function.                           var result = []; return result
+// Search through your array.                                        for (var i = 0; i < strings.length; i++) var string = strings[i]
+// Find what your need.                                                                   if ( ... ) { ... }
+// Set condtion.                                                                   if (test(string, char)) { ... }
+// Save.                                                                                { result.push(string) }
+
+// What is the test returning? A boolean value.
+
+// GET COMFORTABLE WITH THE DEBUGGER. Stops code wherever you place the keyword, Debugger.
+
+2.19 .19
