@@ -225,8 +225,8 @@ _.unique = arr => {
  */
 _.filter = (arr, func) => {
     let arrN = [];
-    _.each(arr, (ele, ind, col) => {
-        if (func(ele, ind, col)) {
+    _.each(arr, (ele, i, col) => {
+        if (func(ele, i, col)) {
             arrN.push(ele);
         }
     });
@@ -247,7 +247,7 @@ _.filter = (arr, func) => {
  */
 _.reject = (arr, func) => {
     let arrN = [];
-    _.each(arr, (ele, ind, coll) => {
+    _.each(arr, ele => {
         if (!_.filter(arr, func).includes(ele)) {
             arrN.push(ele);
         }
@@ -294,8 +294,8 @@ _.partition = (arr, func) => [_.filter(arr, func), _.reject(arr, func)];
  */
 _.map = (coll, func) => {
     let arr = [];
-    _.each(coll, (ele, ind, coll) => {
-        arr.push(func(ele, ind, coll));
+    _.each(coll, (ele, i, coll) => {
+        arr.push(func(ele, i, coll));
     });
     return arr;
 };
@@ -313,7 +313,7 @@ _.map = (coll, func) => {
  */
 _.pluck = (arr, prop) => {
     let arrN = [];
-    _.map(arr, (ele, ind, coll) => {
+    _.map(arr, ele => {
         arrN.push(ele[prop]);
     });
     return arrN;
@@ -344,9 +344,9 @@ _.pluck = (arr, prop) => {
  */
 _.every = (coll, func) => {
     let arr = [];
-    _.each(coll, (ele, ind, coll) => {
+    _.each(coll, (ele, i, coll) => {
         if (!func) ele ? arr.push(true) : arr.push(false);
-        else func(ele, ind, coll) ? arr.push(true) : arr.push(false);
+        else func(ele, i, coll) ? arr.push(true) : arr.push(false);
         return arr;
     });
     return !_.contains(arr, false);
@@ -393,7 +393,15 @@ _.every = (coll, func) => {
  *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
  *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
  */
-
+_.some = (coll, func) => {
+    let arr = [];
+    _.each(coll, (ele, i, coll) => {
+        if (!func) ele ? arr.push(true) : arr.push(false);
+        else func(ele, i, coll) ? arr.push(true) : arr.push(false);
+        return arr;
+    });
+    return _.contains(arr, true);
+};
 
 /** _.reduce
  * Arguments:
@@ -413,8 +421,24 @@ _.every = (coll, func) => {
  * Examples:
  *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
  */
+_.reduce = (arr, func, s) => {
+    if (s || s == false) {
+        let val = s;
+        for (let i = 0; i < arr.length; i++) {
+            val = (func(val, arr[i], i));
+        }
+        return val;
+    }
+    else {
+        let seed = arr[0];
+        let val = seed;
+        for (let i = 1; i < arr.length; i++) {
+            val = (func(val, arr[i], i));
 
-
+        }
+        return val;
+    }
+};
 /** _.extend
  * Arguments:
  *   1) An Object
@@ -429,7 +453,16 @@ _.every = (coll, func) => {
  *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
  *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
  */
-
+_.extend = (...arrO) => {
+    //loop over rest parameter array
+    for (let i = 0; i < arrO.length; i++) {
+        //loop through the object
+        _.each(arrO[i], (ele, key) => {
+            arrO[0][key] = ele;
+        });
+    }
+    return arrO[0];
+};
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
