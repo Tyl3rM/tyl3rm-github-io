@@ -115,3 +115,29 @@ Presentations
 2.21 .19
 
 LoDown Set - Up
+
+2.25 .19
+
+// ECMAScript: widely agreed upon standard dictated by TC39 Working Group.
+
+// ES6: 6th version of ECMAscriptm officialy known as ECMAScript2015. 
+
+// Arrow Functions: Shorter syntax for function expressions. 
+
+// Exponentiation Operator: Allows your to raise first operand to power of second operand. ** Binary operator
+
+// HOISTING: process when interpreter loads variable and function declerations into memory during the compile phase.
+
+// Interpreter: translates Javascript into Binary, high level source code, to low level machine code.  
+
+// Compile Phhase: Hoists everything before anything is ever executed.
+
+// Var Keyword: used to delcare variable. assignment not hoisted. reserves memory for variable. scoped to execution. 
+
+// Function Keyword: used to declare a function. name and body are hoisted. must be named. 
+
+// Interpreter: Makes two passes: 1. Scans and Hoists 2. Executes   Never physically moved. 
+
+// Hoisting Rules: Happens before code execution. Function and Var hoisted to top of scope. 
+
+// Pitfalls: Always declare variables at the top of scope. Use declerations, until you understand expressions implications.

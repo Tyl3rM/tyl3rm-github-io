@@ -90,5 +90,5 @@ console.log(final); // prints => 42
 // .4 No Keyword //
 // When no variable keyword, is confined by nothing, globally scoped, not recomended.
 
-let noscope = 42;
+noscope = 42;
 console.log(noscope); // prints => 42

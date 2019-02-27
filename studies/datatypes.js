@@ -90,12 +90,11 @@ expanded upon. This date is copied by reference in javascript.
 
 let complex = [4, 2, 42];
 let comp = complex;
-console.log(value); // prints => [4, 2, 42]
-console.log(val); // prints => [4, 2, 42] 
-let complexity = comp.push("Fourty-Two");
+console.log(complex); // prints => [4, 2, 42]
+console.log(comp); // prints => [4, 2, 42] 
+comp.push("Fourty-Two");
 console.log(complex); // prints => [4, 2, 42, "Fourty-Two"]
 console.log(comp); // prints => [4, 2, 42, "Fourty-Two"] 
-console.log(complexity); // prints => [4, 2, 42, "Fourty-Two"]
 
 // 7. Array //
 // A collection of data in a zero indexed list, denoted by [square brackets]. 

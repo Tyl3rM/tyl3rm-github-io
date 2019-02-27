@@ -30,7 +30,7 @@ console.log(single.toLowerCase()); // prints => "string"
 
 // Join Together //
 
-console.log(single + "-" + double); // prints => "String-String"
+console.log(single + "-" + double); // prints => "String-String String"
 
 // Find Length //
 

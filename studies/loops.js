@@ -12,7 +12,8 @@ and computers because the amount of system resources it will take.
 */
 
 // 1. While Loops //
-// Loops that are used to run as long as a set condition is true. //
+// These loops are often used when the number of times you want to iterate over an
+// object is not known, so they run instead till a set condition is met. 
 
 let life = 42;
 while (life <= 1337) {
@@ -47,7 +48,7 @@ for (let i = beyond.length; i > 0; i--) {
 // prints => 43 // prints => 42
 
 // 3. For-In Loops //
-// Loops that are used to go through an object //
+// Loops that are used to go through an object, they only run top to bottom. //
 
 let elite = { Tyler: 42, Andy: 1337, Connor: "leet" };
 for (var key in elite) {

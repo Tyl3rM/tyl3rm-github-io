@@ -78,7 +78,7 @@ console.log(close()); // prints => 6
 function pure(x, y) {
     var z = x + y;
     return function impure() {
-        z + 2;
+        return z += 2;
     };
 }
 console.log(pure(4, 2)()); // prints => 8

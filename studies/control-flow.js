@@ -41,7 +41,7 @@ else if (input === "Andy" || input === "Connor") {
 else {
     console.log("Keep trying!");
 }
-// prints => Keepy trying!
+// prints => Keep trying!
 
 // 2. Switch Statements //
 
