@@ -141,3 +141,43 @@ LoDown Set - Up
 // Hoisting Rules: Happens before code execution. Function and Var hoisted to top of scope. 
 
 // Pitfalls: Always declare variables at the top of scope. Use declerations, until you understand expressions implications.
+
+2.26 .19
+
+// Template literals: string interpolation, var firstname = "Tyler"; var lastName = "Mott"; var fullName = `${firstName} ${lastName}`; fullName: Tyler Mott
+
+// Syntax: Back ticks `` & Dollar sign $ then Curly braces {variable/stringified}   `${anything, turns into string}`
+
+// Variable Scope: refers to what variables are accessible and where we can access them. Global and Local Scopes. 
+
+// Var vs Let/Const: var is only scoped by functions. let/const are scoped by their block.
+
+// Variable Shadowing: a variable declared in lower scope will override and variable with same in in higher scope. 
+
+// Function Parameters: create new function scoped variables from the paramaters. 
+
+// Immediatly Invoked Function Expression (IIFE) : 
+// var save = function (){];   var save = "I am saving this"   save() - Doesnt work, overwrites
+// var save = funciton () {};  (function () {var save = "I am saving this" })(); - Works, no overwrite
+//                                      anonymous function () - calling it                                        
+
+// Closure: a clasure is a function that retains access to an outer (enclosing) functions variables even after the outer function has returned. 
+
+// Closure Uses: partial application of functions. creating private variables. helps remember what the variable is currently equal to. 
+
+// Private Variables: 
+createAccount(initialAmt) {
+    let balnnce = initialAmt;
+    return {
+        withdrawal: (amt) => {
+            balance -= amt;
+        },
+        getBalance: () => balance,
+    };
+}
+console.log
+const createUser = (username, password) => {
+
+}
+
+2.27 .19
