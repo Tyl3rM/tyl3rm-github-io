@@ -181,3 +181,13 @@ const createUser = (username, password) => {
 }
 
 2.27 .19
+
+// ES6 - Default Parameters: allow you change the initial value of a parameter. (num 1 = 0, num2 = 0) Defaults if no argument given. 
+
+// Value vs Reference: for pimitive datatypes you use copy be value. complex data is copied by reference. 
+
+// Value: creates its own copy for the variable its assigning to.
+
+// Reference: points its variable to the same object.
+
+// Functions parameters follow the same exact rules when being assigned.

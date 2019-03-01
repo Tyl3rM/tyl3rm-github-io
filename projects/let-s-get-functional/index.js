@@ -21,38 +21,26 @@ var _ = require("lodown_tyl3r");
 
 var maleCount = arr => _.filter(arr, ele => ele.gender === "male").length;
 
-var femaleCount = arr => _.reduce(arr,
-    function(inc, ele) {
-        if (ele.gender === "female") {
-            inc++;
-        }
-        return inc;
-    }, 0);
+var femaleCount = arr => _.reduce(arr, (inc, ele) => {
+    if (ele.gender === "female") inc++;
+    return inc;
+}, 0);
 
 var oldestCustomer = arr => {
     let old;
-    _.each(arr,
-        function(ele, i) {
-            if (i === 0) {
-                old = ele;
-            }
-            else if (ele.age > old.age) {
-                old = ele;
-            }
-        });
+    _.each(arr, (ele, i) => {
+        if (i === 0) old = ele;
+        else if (ele.age > old.age) old = ele;
+    });
     return old.name;
 };
 
 var youngestCustomer = arr => {
     let young;
     _.each(arr,
-        function(ele, i) {
-            if (i === 0) {
-                young = ele;
-            }
-            else if (ele.age < young.age) {
-                young = ele;
-            }
+        (ele, i) => {
+            if (i === 0) young = ele;
+            else if (ele.age < young.age) young = ele;
         });
     return young.name;
 };
@@ -61,13 +49,11 @@ var averageBalance = arr => {
     let balance = [];
     let sum = 0;
     let ave;
-    _.each(arr,
-        function(cust) {
-            let bal = cust.balance.split(",");
-            let bal2 = bal[0].split("");
-            balance.push(Number(bal2[1] + bal[1]));
-        });
-
+    _.each(arr, (cust) => {
+        let bal = cust.balance.split(",");
+        let bal2 = bal[0].split("");
+        balance.push(Number(bal2[1] + bal[1]));
+    });
     _.each(balance, ele => sum += ele);
     ave = sum / balance.length;
     return ave;
@@ -75,24 +61,20 @@ var averageBalance = arr => {
 
 
 var firstLetterCount = (arr, char) => {
-    return _.reduce(arr,
-        function(inc, cus) {
-            if (cus.name[0] === char.toUpperCase()) {
-                inc++;
-            }
-            return inc;
-        }, 0);
+    return _.reduce(arr, (inc, cus) => {
+        if (cus.name[0] === char.toUpperCase()) inc++;
+        return inc;
+    }, 0);
 };
 
 
 var friendFirstLetterCount = (arr, cus, char) => {
-    return _.reduce(arr,
-        function(inc, cust) {
-            if (cust.name.toUpperCase() === cus.toUpperCase()) {
-                _.each(cust.friends, obj => { if (obj.name[0].toUpperCase() === char.toUpperCase()) { inc++ } });
-            }
-            return inc;
-        }, 0);
+    return _.reduce(arr, (inc, cust) => {
+        if (cust.name.toUpperCase() === cus.toUpperCase()) {
+            _.each(cust.friends, obj => { if (obj.name[0].toUpperCase() === char.toUpperCase()) inc++ });
+        }
+        return inc;
+    }, 0);
 };
 
 var friendsCount = (arr, name) => {
@@ -109,28 +91,21 @@ var friendsCount = (arr, name) => {
 var topThreeTags = arr => {
     let topTag = [];
     let tag = {};
-    _.each(arr, function(cust) {
-        _.each(cust.tags, function(currentTag) {
+    _.each(arr, cust => {
+        _.each(cust.tags, currentTag => {
             let key = Object.keys(tag);
-            if (_.contains(key, currentTag)) {
-                tag[currentTag]++;
-            }
-            else { tag[currentTag] = 1; }
+            if (_.contains(key, currentTag)) tag[currentTag]++;
+            else tag[currentTag] = 1;
         });
     });
-
     let vals = Object.keys(tag).map(function(key) {
         return tag[key];
     });
-    let sort = _.unique(vals.sort(function(a, b) { return b - a }));
-    _.each(sort, function(elem, index) {
-        _.each(tag, function(value, key) {
-            if (topTag.length === 3) {
-                return;
-            }
-            else if (tag[key] >= elem) {
-                topTag.push(key);
-            }
+    let sort = _.unique(vals.sort((a, b) => { return b - a }));
+    _.each(sort, (elem, index) => {
+        _.each(tag, (value, key) => {
+            if (topTag.length === 3) return;
+            else if (tag[key] >= elem) topTag.push(key);
         });
     });
     return _.unique(topTag);
@@ -142,7 +117,7 @@ var genderCount = arr => {
         female: 0,
         transgender: 0,
     };
-    _.each(arr, function(cust) {
+    _.each(arr, (cust) => {
         if (cust.gender === "male") {
             genders.male++;
         }
