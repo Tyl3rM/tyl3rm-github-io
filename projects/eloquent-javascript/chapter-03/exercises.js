@@ -23,7 +23,7 @@ function isEven(num) {
 
 function countChars(str, char) {
   let count = 0;
-  str.split("").forEach(() => count += 1);
+  str.split("").forEach(x => { if (x == char) return count += 1 });
   return count;
 }
 
