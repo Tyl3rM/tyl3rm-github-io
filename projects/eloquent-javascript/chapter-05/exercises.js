@@ -37,7 +37,7 @@ function dominantDirection(string) {
     return script ? script.direction : "none";
   });
   scripts.sort((a, b) => { return a.count - b.count; });
-  return scripts[scripts.length].name;
+  return scripts[scripts.length - 1].name;
 }
 
 // /////////////////////////////////////////////////////////////////////////////

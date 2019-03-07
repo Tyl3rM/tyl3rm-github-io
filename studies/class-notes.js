@@ -191,3 +191,79 @@ const createUser = (username, password) => {
 // Reference: points its variable to the same object.
 
 // Functions parameters follow the same exact rules when being assigned.
+
+2.28 .19
+
+    // Rest Parameters: offers a syntax for declaring a parameter that will hold all the arguments a function takes in. 
+    ...variable
+// It turns the arguments into an array so you can use array like methods.
+
+// this: the this keyword refers to tje context in which a function is called. depends on how a function is invoked. 
+
+// Always an object, or undefined. Only known at call time. 
+
+// Invoke: Free Function. Method. Construction mode. Global reference. Using  .bind() .call() .apply()  
+
+// Free Function Invocation: function called freely, refers to global window. 
+
+// Method Invocation:    this.name    halleBot.sayName()    halleBot.name
+//                         ^left         ^left
+
+// .call: calls function, (what you want to bind, arg, arg, arg...)
+// .apply: calls function, (what you want to bind, ["array", "stuff"]) 
+// .bind: binds to function, no call, returns new function, (arg, arg, arg...)
+
+// Construction Mode: start with capital usally denotes constructor function. Pizza(size) require     new     keyword
+
+// Global Referemce: used in global context outside of function.
+// left of the dot, most of the time. no dot, references global window. 
+
+// Arrow Functions & this : arrow funcitons do not have their own this value, pull value from lexical scope. 
+
+// setTimeout: a function that lets you run a function after some time has passed. 
+// first arg is the func.
+// second ar is how long to wait.
+
+function myfunc() {
+    console.log("Hello!");
+}
+
+setTimeout(myFunc, 1000);
+
+3.4 .19
+
+// Combining Complex Data Types: 
+// Array.prototype.concat - method on all arrays that takes in any ammount of arrays and
+// returns a new arreay with all the elements combined. Pure Function. array.concat(arr, arr1, arr2)
+// Object.assign - is a function that takes in a target object and any other ammount of preceding objects. 
+// It copies over each objects properties into the target object and then returns the object. Object.assign(target, parts)
+// Can be pure by passing empty object as target {};
+
+// Spread Operator: lets you spread out the contents of an interable into another iterable. 
+//   ...   -  variablename       ...var     let var = [1, 2, 3]   let var2 = [4, 5, 6]
+//  let all = [var, var2]   =>  [1, 2, 3, 4, 5, 6]   
+//  Also works on object keys. 
+const car = {
+    color: 'grey',
+    engine: {},
+    wheels: {},
+}
+
+const redCar = {
+    ..car,
+    color: "red",
+}
+
+// Pure Functions: 
+// Dertiministic - given same input, always produces same output
+// Produces no side effects - all inputs are passed in, no use of global variable. NO return can indicate side effect.
+// All pure functions are dertiministic. Not all dertiministic functions are pure.
+// No side effect - does not mutate passed in value. Does not reference variables defined outside of function. Does not change application state.
+
+// Make Copies:  .slice() .concat() Array.from()  [...copy]    {...copy}
+
+// Why?  If possible use pure functions. However impure functions are sometimes necessary..
+// Click Handlers, Network Calls, File Access, DOM manipulation
+
+
+const capitalizeAll = string => string.replace(/ [a-z]/gi, x => x.toUpperCase()).replace(/\w/, x => x.toUpperCase());
