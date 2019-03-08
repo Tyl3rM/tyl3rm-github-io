@@ -267,3 +267,25 @@ const redCar = {
 
 
 const capitalizeAll = string => string.replace(/ [a-z]/gi, x => x.toUpperCase()).replace(/\w/, x => x.toUpperCase());
+
+const add = (acc, cur) => acc + cur;
+const isBalanced = (nums1, nums2) => nums1.reduce(add) === nums2.reduce(add) ? true : false;
+
+const reverseString = (string) => string.split("").reverse().join("");
+
+2.6 .19
+
+//  Array destructuring: allows you to create variables from values inside of an array or object based on the position. 
+//  const nums = [1, 2, 3, 4]   const [uno, dos] = nums;       uno = 1   dos = 2
+
+//  Object destructuring: allows you to create variables from values inside of an object based on the key name. 
+//  const user = { name: "Lucy", favColor: "green" };     const { name, faveColor: fColor } = user       name = "Lucy" fColor = "green"
+
+// Higher Order Functions: a function that takes a function in as an argument or paramter, or returns a function. 
+// Help decrease amount of time writing code. Less errors in code. Easier time to understand code. Re-use more code. 
+
+// Callback functions: a function that is passed to another function that is called. 
+
+// Filter:    animals.filter(animal => animal.species === "cat")
+
+// Method Chaining:
