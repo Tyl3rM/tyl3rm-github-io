@@ -273,7 +273,26 @@ const isBalanced = (nums1, nums2) => nums1.reduce(add) === nums2.reduce(add) ? t
 
 const reverseString = (string) => string.split("").reverse().join("");
 
-2.6 .19
+var mapObject = (object, callback) => {
+    obj = {};
+    for (let key in object) {
+        callback(key, object[key]);
+    }
+    return obj;
+
+};
+
+var format = (key, value) => {
+    if (key === "biography") {
+        obj[key] = value.toLowerCase();
+
+    }
+    else if (key) {
+        obj[key] = value.toUpperCase();
+    }
+};
+
+3.6 .19
 
 //  Array destructuring: allows you to create variables from values inside of an array or object based on the position. 
 //  const nums = [1, 2, 3, 4]   const [uno, dos] = nums;       uno = 1   dos = 2
@@ -289,3 +308,55 @@ const reverseString = (string) => string.split("").reverse().join("");
 // Filter:    animals.filter(animal => animal.species === "cat")
 
 // Method Chaining:
+
+3.7 .19
+
+// Reduce: 3 arguments - array, combine function, seed (optional)
+//  Callback function - combine function takes 4 params
+// 1. prevVal - seed value if given or default to the first element in the array
+// 2. element - current element in the array, if no seed, second element. 
+// 3. i - current index of array 
+// 4. array - reference tot the array passed to reduce. 
+const combine = (preVal, element, i, array) => { return prevVal + element; }
+// Correctly naming params:
+// 1. preVal - name for the final result you want from reduce
+// 2. curVal - singular of contents of array
+// Seed: initial value passed to the callback function as preVal, like real seed its only used once, & should be the same datatype as your output. No seed defaults first element. 
+const car = [
+    { price: 11, ... },
+    { price: 14, ... },
+    { price: 20, ... },
+    { price: 10, ... },
+]
+
+const total = cart.reduce((total, product) => { return total + product.price; }, 0);
+
+}
+
+const countParenths = par => {
+
+    function counter(count, cur) {
+        if (cur === "(") {
+            count++;
+        }
+        else if (cur === ")") {
+            if (count <= 0) { return count; }
+            count--;
+        }
+        return count;
+    }
+
+    return par.split("").reduce(counter, 0);
+};
+
+
+var mapObjectReduce = function(object, callback) {
+    return Object.keys(object).reduce((result, key) => {
+        result[key] = callback(object, object[key]);
+        return result;
+    });
+};
+
+var format = function(key, value) {
+    return key.value * 2;
+};
