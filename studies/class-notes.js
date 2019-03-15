@@ -350,13 +350,12 @@ const countParenths = par => {
 };
 
 
-var mapObjectReduce = function(object, callback) {
-    return Object.keys(object).reduce((result, key) => {
-        result[key] = callback(object, object[key]);
-        return result;
-    });
-};
 
-var format = function(key, value) {
-    return key.value * 2;
-};
+
+3.8 .19
+
+// Recursion:
+//  Recursion:
+//   Recursion: 
+//              Base Case - All recursive function need at least one base case or condition to stop recursing. 
+//              Recursive Call - The recursive call must be called with an argument that will eventually reach the base case.
